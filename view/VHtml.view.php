@@ -39,7 +39,7 @@ class VHtml
   {
     // Affichage du fichier $_html s'il existe
     // sinon affichage du fichier unknown.html
-    (file_exists($_html)) ? include($_html) : include('../Html/unknown.html');
+    (file_exists($_html)) ? include($_html) : include('../html/unknown.html');
     
     return;
     

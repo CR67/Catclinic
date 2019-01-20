@@ -1,21 +1,47 @@
 <div class="grid-container">
-		  <div class="grid-x grid-margin-x">
-		    <div class="cell medium-3">
-		      <ul class="vertical tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" id="example-tabs">
-		        <li class="tabs-title is-active first"><a href="#panel1v" aria-selected="true">Formulaire de Contact</a></li>
-		        <li class="tabs-title"><a href="#panel2v">Horaires d'Ouverture</a></li>
-		        <li class="tabs-title last"><a href="#panel3v">Plan d'Accès</a></li>
-		      </ul>
-		    </div>
-		    <div class="cell medium-9">
-		      <div class="tabs-content" data-tabs-content="example-tabs">
-		        <div class="tabs-panel is-active" id="panel1v">
-		        </div>
-		        <div class="tabs-panel" id="panel2v">
-		        </div>
-		        <div class="tabs-panel" id="panel3v">
-		        </div>
-		      </div>
-		    </div>
-		  </div>
-		</div>
+  <div class="grid-x grid-margin-x">
+    <div class="cell medium-3">
+      <ul class="vertical tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" id="example-tabs">
+        <li class="tabs-title is-active first"><a href="#formulaire" aria-selected="true">Fomulaire de Contact</a></li>
+        <li class="tabs-title"><a href="#horaires">Horaires d'Ouverture</a></li>
+        <li class="tabs-title last"><a href="#plan">Plan d'Accès</a></li>
+      </ul>
+    </div>
+    <div class="cell medium-9">
+      <div class="tabs-content" data-tabs-content="example-tabs">
+        <div class="tabs-panel text-justify is-active" id="formulaire">
+        	<form action="" method="post">
+        		<fieldset class="fieldset">
+        			<legend>Formulaire de contact par mail :</legend>
+        			<p>
+        				Nom :<input type="text" name="nom" value="" placeholder="Votre Nom" size="30" />
+        				Prénom :<input type="text" name="prenom" value="" placeholder="Votre Prénom" size="30" />
+        				Adresse Mail :<input type="text" name="mail" value="" placeholder="Votre Adresse Mail" size="40" />
+        			Votre Message :</br><textarea rows="5" name="message" value="" placeholder="Votre Message (taille max 250 car.)"></textarea>
+        			<input type="button" value="Envoyer">
+        			<input type="reset" value="Annuler">
+        			</p>
+        		</fieldset>
+        	</form>
+        </div>
+        <div class="tabs-panel text-justify" id="horaires">
+        	<p>
+        		Du lundi au Vendredi de 8h30 à 19h30</br>
+        		Le Samedi de 8h30 à 18h00</br>
+        		Le Dimanche de 10h00 à 12h00
+        	</p>
+        	<hr>
+        	<p>
+        		<strong>Horaires des urgences :</strong></br>
+        		Les urgences sont assurées 24h/24 et 7j/7 après appel téléphonique au <strong>04 21 23 06 66</strong>
+        	</p>
+        </div>
+        <div class="tabs-panel text-justify" id="plan">
+        	<p>
+        		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2804.5553437802178!2d4.946742015797169!3d45.33760084990246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f53ab61a54e601%3A0x2f457ddfca8e058e!2s88+Route+des+Chats+Noirs%2C+38270+Jarcieu!5e0!3m2!1sfr!2sfr!4v1547647373115" frameborder="0" allowfullscreen></iframe>
+        	</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

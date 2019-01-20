@@ -1,29 +1,29 @@
 <div class="top-bar">
-	  		<div class="top-bar-left">
-	  			<img src="img/logo.png" alt="logo">
-	  		</div>
-	  		<div class="top-bar-title top-bar-right">
-	  			<h2>CatClinic</h2>
-	  		</div>
-	  	</div>
+	<div class="top-bar-left">
+	  	<img src="img/logo.png" alt="logo">
+	</div>
+	<div class="top-bar-title top-bar-right">
+	  	<h2>CatClinic</h2>
+	</div>
+</div>
 
-	  	<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
-	  		<button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
-	  	<div class="title-bar-title">Menu</div>
-		</div>
+<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+	<button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+	<div class="title-bar-title">Menu</div>
+</div>
 
-		<div class="top-bar" id="responsive-menu">
-				<div class="top-bar-left">
-				    <ul class="dropdown menu" data-dropdown-menu>
-			     		<li><a href="#" id="1" onclick="changeClass('1')" class=""><strong>Accueil</strong></a></li>
-					    <li><a href="#" id="2" onclick="changeClass('2')" class=""><strong>Conseils</strong></a></li>
-					    <li><a href="#" id="3" onclick="changeClass('3')" class=""><strong>Contacts</strong></a></li>
-					</ul>
-				</div>
-			<div class="top-bar-right">
-			    <ul class="menu">
-			      <li><input type="search" placeholder="Recherche"></li>
-			      <li><button type="button" class="button">Rechercher</button></li>
-			    </ul>
-			</div>
-		</div>
+<div class="top-bar" id="responsive-menu">
+	<div class="top-bar-left">
+		<ul class="dropdown menu" data-dropdown-menu>
+			<li>
+				<button id="menu-accueil" onclick="changeContent('content', '../php/index.php', 'EX=accueil')" class="menu-button"><strong>Accueil</strong></button>
+			</li>
+			<li>
+				<button id="menu-conseils" onclick="changeContent('content', '../php/index.php', 'EX=conseils')" class="menu-button"><strong>Conseils</strong></button>
+			</li>
+			<li>
+				<button id="menu-contacts" onclick="changeContent('content', '../Php/index.php', 'EX=contacts')" class="menu-button" class=""><strong>Contacts</strong></button>
+			</li>
+		</ul>
+	</div>
+</div>
