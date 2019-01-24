@@ -27,11 +27,6 @@ $vcontent = new $content['class']();
 		<script src="js/ajax.js"></script>
 		<script src="js/init.js"></script>
         <script src="js/jquery.js"></script>
-        <script src="js/what-input.js"></script>
-		<script src="js/foundation.js"></script>
-		<script>
-		    $(document).foundation();
-		</script>
 
 	</body>
 </html>

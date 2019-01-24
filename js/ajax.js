@@ -47,51 +47,56 @@ function getXhr()
  *  
  * @return none
  */
-function changeContent(id, url, param, callback)
+var elem = 'menu-accueil';
+
+function changeContent(iddiv, idbutton, url, param, callback)
 {
-  // Récupère l'élément cible dont l'identifiant vaut id
-  var c = document.getElementById(id);
-  
-  // Met une image animée afin de montrer le chargement en cours du contenu
-  c.innerHTML = '<img src="../Img/loading.gif" alt="Chargement" />';
+    // Modifie la classe des boutons du menu de navigation principal afin de les rendre "actifs" ou non ce qui permet de leur appliquer le bon style css
+  document.getElementById(elem).classList.remove('is-active');
+  elem = idbutton;
+  document.getElementById(idbutton).classList.add('is-active');
 
-  //Récupère la connexion au serveur http
-  var xhr = getXhr();
+  if(iddiv && url && param){
+    // Récupère l'élément cible dont l'identifiant vaut id
+    var c = document.getElementById(iddiv);
 
-  // Ouvre la connexion en mode asynchrone avec le serveur http avec comme adresse url
-  xhr.open('POST', url, true);
+    // Met une image animée afin de montrer le chargement en cours du contenu
+    //c.innerHTML = '<img src="../Img/loading.gif" alt="Chargement" />';
 
-  // Envoie des entêtes pour l'encodage
-  xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    //Récupère la connexion au serveur http
+    var xhr = getXhr();
 
-  //Envoie les paramètres param (même vide)
-  xhr.send(param);
-  
-  // Exécution en mode asynchrone de la fonction anonyme dès que l'on obtient une réponse du serveur http
-  xhr.onreadystatechange = function() 
-  {
-    // Debuggage
-	if (DEBUG_AJAX) alert(xhr.responseText);
-	
-    // Test si le serveur a tout reçu (200) et que le serveur ait fini (4)
-    if (xhr.status == 200 && xhr.readyState == 4)
-    {
-      // Modifie l'élément ayant pour identificateur id suivant le programme url
-      c.innerHTML = xhr.responseText;
+    // Ouvre la connexion en mode asynchrone avec le serveur http avec comme adresse url
+    xhr.open('POST', url, true);
 
-      //Test s'il y a une callback 
-      if (callback != null)
-      {
-    	// Exécution du script contenu dans la callback
-        window.eval(callback);
-      }
+    // Envoie des entêtes pour l'encodage
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 
-      // Si on a du javascript dans le nouveau contenu on identifie les scripts et on force l'éxécution avec eval()
-      var allscript = c.getElementsByTagName('script');
-      for (var i = 0; i < allscript.length; ++i)
-      {
-    	// Exécution du script
-        window.eval(allscript[i].text);
+    //Envoie les paramètres param (même vide)
+    xhr.send(param);
+
+    // Exécution en mode asynchrone de la fonction anonyme dès que l'on obtient une réponse du serveur http
+    xhr.onreadystatechange = function() {
+      // Debuggage
+      if (DEBUG_AJAX) alert(xhr.responseText);
+
+      // Test si le serveur a tout reçu (200) et que le serveur ait fini (4)
+      if (xhr.status == 200 && xhr.readyState == 4) {
+        // Modifie l'élément ayant pour identificateur id suivant le programme url
+        c.innerHTML = xhr.responseText;
+
+        //Test s'il y a une callback
+        if (callback != null) {
+          // Exécution du script contenu dans la callback
+          window.eval(callback);
+        }
+
+        // Si on a du javascript dans le nouveau contenu on identifie les scripts et on force l'éxécution avec eval()
+        var allscript = c.getElementsByTagName('script');
+        for (var i = 0; i < allscript.length; ++i) {
+          // Exécution du script
+          window.eval(allscript[i].text);
+        }
       }
     }
   };

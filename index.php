@@ -1,38 +1,45 @@
 <?php
-// Récupération de l'autoload
-require ('../Inc/require.inc.php');
 
-// Récupération de la variable de contrôle
-$EX = isset ($_REQUEST['EX']) ? $_REQUEST['EX'] : 'accueil';
+require ('inc/require.inc.php');
 
-// Contrôleur
+$EX = isset ($_REQUEST['EX']) ? $_REQUEST['EX'] : 'home';
+
 switch ($EX)
 {
-  case 'accueil': accueil(); break;
+  case 'home': home(); break;
+  case 'accueil': accueil(); exit;
   case 'conseils': conseils(); exit;
   case 'contacts': contacts();  exit;
 }
 
-// Récupération de la mise en page
-require('../View/layout.view.php');
+require('view/layout.view.php');
 
-function accueil()
+function home()
 {
   global $content;
 
   $content['title'] = 'CatClinic';
   $content['class'] = 'VHtml';
   $content['method'] = 'showHtml';
-  $content['arg'] = '../html/accueil.html';
+  $content['arg'] = 'html/accueil.html';
   
   return;
   
 }
 
+function accueil()
+{
+  $vhtml = new VHtml();
+  $vhtml->showHtml('html/accueil.html');
+
+  return;
+
+}
+
 function conseils()
 {
   $vhtml = new VHtml();
-  $vhtml->showHtml('../html/conseils.html');
+  $vhtml->showHtml('html/conseils.html');
 
   return;
   
@@ -41,7 +48,7 @@ function conseils()
 function contacts()
 {
   $vhtml = new VHtml();
-  $vhtml->showHtml('../html/contacts.html');
+  $vhtml->showHtml('html/contact.html');
   
   return;
   

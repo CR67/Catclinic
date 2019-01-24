@@ -1,28 +1,23 @@
 <div class="top-bar">
 	<div class="top-bar-left">
-	  	<img src="../images/logo.png" alt="logo">
+	  	<img src="images/logo.png" alt="logo" class="logo">
 	</div>
 	<div class="top-bar-title top-bar-right">
 	  	<h2>CatClinic</h2>
 	</div>
 </div>
 
-<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
-	<button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
-	<div class="title-bar-title">Menu</div>
-</div>
-
-<div class="top-bar" id="responsive-menu">
+<div class="top-bar">
 	<div class="top-bar-left">
-		<ul class="dropdown menu" data-dropdown-menu>
+		<ul class="dropdown menu">
 			<li>
-				<button id="menu-accueil" onclick="changeContent('content', '../php/index.php', 'EX=accueil')" class="menu-button"><strong>Accueil</strong></button>
+				<button id="menu-accueil" onclick="changeContent('content', 'menu-accueil', 'index.php', 'EX=accueil')" class="menu-button is-active"><strong>Accueil</strong></button>
 			</li>
 			<li>
-				<button id="menu-conseils" onclick="changeContent('content', '../php/index.php', 'EX=conseils')" class="menu-button"><strong>Conseils</strong></button>
+				<button id="menu-conseils" onclick="changeContent('content', 'menu-conseils', 'index.php', 'EX=conseils')" class="menu-button"><strong>Conseils</strong></button>
 			</li>
 			<li>
-				<button id="menu-contacts" onclick="changeContent('content', '../Php/index.php', 'EX=contacts')" class="menu-button" class=""><strong>Contacts</strong></button>
+				<button id="menu-contacts" onclick="changeContent('content', 'menu-contacts', 'index.php', 'EX=contacts')" class="menu-button"><strong>Contacts</strong></button>
 			</li>
 		</ul>
 	</div>
