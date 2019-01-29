@@ -25,6 +25,7 @@ $vcontent = new $content['class']();
 	</div><!-- id="content" -->
 
 		<script src="js/ajax.js"></script>
+        <script src="js/activation.js"></script>
 		<script src="js/init.js"></script>
         <script src="js/jquery.js"></script>
 

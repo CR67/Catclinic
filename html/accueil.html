@@ -2,9 +2,15 @@
   <div class="grid-x grid-margin-x">
     <div class="cell medium-3">
       <ul class="vertical tabs">
-        <li class="tabs-title presentation is-active first"><a href="" aria-selected="true">Présentation</a></li>
-        <li class="tabs-title specialites"><a href="">Spécialités</a></li>
-        <li class="tabs-title equipe last"><a href="">Equipe</a></li>
+        <li class="tabs-title presentation is-active first">
+			<button class="tab-button" onclick="setActive('presentation')" aria-selected="true">Présentation</button>
+		</li>
+        <li class="tabs-title specialites">
+			<button class="tab-button" onclick="setActive('specialites')">Spécialités</button>
+		</li>
+        <li class="tabs-title equipe last">
+			<button class="tab-button" onclick="setActive('equipe')">Equipe</button>
+		</li>
       </ul>
     </div>
     <div class="cell medium-9">
@@ -70,7 +76,7 @@
         		</li>
         	</ul>
         </div>
-        <div class="tabs-panel equipe">
+        <div class="tabs-panel equipe last">
         	<ul class="grid-x ul-content">
         		<li class="cell medium-3">
         			<div>

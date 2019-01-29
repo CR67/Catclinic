@@ -282,6 +282,9 @@ textarea {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap; }
 
+ul.grid-x {
+  justify-content: space-around; }
+
 .cell {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
@@ -5212,6 +5215,12 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
     .tabs.primary > li > a:hover, .tabs.primary > li > a:focus {
       background: #1673b1; }
 
+.tab-button {
+  cursor: pointer;
+  background-color: transparent;
+  width: 100%;
+}
+
 .tabs-title {
   float: left;
   border-right: 1px solid #9e904a; }
@@ -5221,12 +5230,21 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
     font-size: 1rem;
     line-height: 1;
     color: #706635;}
+.tabs-title > .tab-button {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1;
+  color: #706635;}
     [data-whatinput='mouse'] .tabs-title > a {
       outline: 0; }
     .tabs-title > a:hover {
       background: #fff2b2;
       color: #938c64; }
-    .tabs-title > a:focus, .tabs-title > a[aria-selected='true'] {
+.tabs-title > .tab-button:hover {
+  background: #fff2b2;
+  color: #938c64; }
+    .tabs-title > a:focus, .tabs-title > a[aria-selected='true'], .tabs-title > .tab-button:focus, .tabs-title > .tab-button[aria-selected='true'] {
       background: #fce776;
       color: #706635;
       font-weight: bold; }
