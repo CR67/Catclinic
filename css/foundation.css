@@ -188,7 +188,6 @@ img {
   display: block;
   vertical-align: middle;
   max-width: 100%;
-  /*margin: 0 1rem 1rem 0;*/
   height: auto;
   -ms-interpolation-mode: bicubic;
   margin-right: auto;
@@ -248,14 +247,9 @@ textarea {
   display: none !important; }
 
 .grid-container {
-  padding-right: 0.625rem;
-  padding-left: 0.625rem;
   max-width: 75rem;
   margin: 0 auto; }
-  @media print, screen and (min-width: 40em) {
-    .grid-container {
-      padding-right: 0.9375rem;
-      padding-left: 0.9375rem; } }
+
   .grid-container.fluid {
     padding-right: 0.625rem;
     padding-left: 0.625rem;
@@ -276,11 +270,14 @@ textarea {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-flow: row wrap;
       -ms-flex-flow: row wrap;
-          flex-flow: row wrap; }
+          flex-flow: row wrap;
+  /*margin-left: 2rem;*/
+  }
 
 ul.grid-x {
   justify-content: space-around; }
@@ -5178,6 +5175,10 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 .table-scroll {
   overflow-x: auto; }
 
+.tabs-title-last {
+  display: none;
+}
+
 .tabs {
   margin-top: 3rem;
   margin-right: -0.1rem;
@@ -5230,7 +5231,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
     font-size: 1rem;
     line-height: 1;
     color: #706635;}
-.tabs-title > .tab-button {
+.tab-button {
   display: block;
   padding: 1.25rem 1.5rem;
   font-size: 1rem;
@@ -5241,10 +5242,10 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
     .tabs-title > a:hover {
       background: #fff2b2;
       color: #938c64; }
-.tabs-title > .tab-button:hover {
+.tab-button:hover {
   background: #fff2b2;
   color: #938c64; }
-    .tabs-title > a:focus, .tabs-title > a[aria-selected='true'], .tabs-title > .tab-button:focus, .tabs-title > .tab-button[aria-selected='true'] {
+    .tabs-title > a:focus, .tabs-title > a[aria-selected='true'], .tab-button:focus, .tab-button[aria-selected='true'] {
       background: #fce776;
       color: #706635;
       font-weight: bold; }
@@ -5265,7 +5266,6 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .tabs-content {
   margin-top: 3rem;
-  margin-bottom: 3rem;
   border: 1px solid #9e904a;
   /*border-top: 0;*/
   background: #fce776;

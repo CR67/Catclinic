@@ -1,104 +1,127 @@
 <div class="grid-container">
-  <div class="grid-x grid-margin-x">
-    <div class="cell medium-3">
-      <ul class="vertical tabs">
-        <li class="tabs-title presentation is-active first">
-			<button class="tab-button" onclick="setActive('presentation')" aria-selected="true">Présentation</button>
-		</li>
-        <li class="tabs-title specialites">
-			<button class="tab-button" onclick="setActive('specialites')">Spécialités</button>
-		</li>
-        <li class="tabs-title equipe last">
-			<button class="tab-button" onclick="setActive('equipe')">Equipe</button>
-		</li>
-      </ul>
-    </div>
-    <div class="cell medium-9">
-      <div class="tabs-content">
-        <div class="tabs-panel text-justify is-active presentation first">
-        	<p>
-        		Bienvenue sur le site de la clinique véterinaire spécialisée pour les petits et gros félins : <strong>CatClinic</strong>...
-        	</p>
-        	<p>
-        		Vous y trouverez des conseils pratiques pour prendre soin de nos amis les chats, le détail des services et préstations proposées ainsi que tous les renseignements nécessaires pour prendre rendez-vous et nous trouver facilement. A bientôt...
-        	</p>
-        	<img src="images/ClinicExt.jpg" alt="Photo de la Clinique">
-        </div>
-        <div class="tabs-panel specialites">
-        	<ul class="grid-x ul-content">
-        		<li class="cell medium-3">
-        			<div>
-        				<img src="images/radiographie.jpg" alt="radiographie">
-        				<p class="text-center">Radiographie</p>
-        			</div>
-        		</li>
-        		<li class="cell medium-3">
-        			<div>
-        				<img src="images/échographie.png" alt="échographie">
-        				<p class="text-center">Echographie</p>
-        			</div>
-        		</li>
-        		<li class="cell medium-3">
-					<div>
-        				<img src="images/sang.jpg" alt="analyse de sang">
-        				<p class="text-center">Analyses de Sang</p>
-        			</div>
-        		</li>
-        		<li class="cell medium-3">
-        			<div>
-        				<img src="images/cytologie.png" alt="cytologie">
-        				<p class="text-center">Cytologie</p>
-        			</div>
-        		</li>
-        		<li class="cell medium-3">
-        			<div>
-        				<img src="images/dentisterie.png" alt="dentisterie">
-        				<p class="text-center">Dentisterie</p>
-        			</div>
-        		</li>
-        		<li class="cell medium-3">
-        			<div>
-        				<img src="images/chirurgie.png" alt="">
-        				<p class="text-center">Chirurgie</p>
-        			</div>
-        		</li>
-        		<li class="cell medium-3">
-        			<div>
-        				<img src="images/hospitalisation.png" alt="">
-        				<p class="text-center">Hospitalisation</p>
-        			</div>
-        		</li>
-        		<li class="cell medium-3">
-        			<div>
-        				<img src="images/garde.png" alt="">
-        				<p class="text-center">Service de Garde</p>
-        			</div>
-        		</li>
-        	</ul>
-        </div>
-        <div class="tabs-panel equipe last">
-        	<ul class="grid-x ul-content">
-        		<li class="cell medium-3">
-        			<div>
-        				<img src="images/dr_remain.jpg" alt="docteur remain">
-        				<p class="text-center">Docteur REMAIN André</p>
-        			</div>
-        		</li>
-        		<li class="cell medium-3">
-        			<div>
-        				<img src="images/dr_burlotte.png" alt="docteur burlotte">
-        				<p class="text-center">Docteur BURLOTTE Sylvie</p>
-        			</div>
-        		</li>
-        		<li class="cell medium-3">
-        			<div>
-        				<img src="images/asv_abeauvaux.png" alt="asv abeauvaux">
-        				<p class="text-center">ASV ABEAUVAUX Jérôme</p>
-        			</div>
-        		</li>
-        	</ul>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="grid-x">
+		<div class="cell medium-3 tabs-title-first">
+			<ul class="vertical tabs tabs-tabs">
+				<li class="tabs-title presentation is-active first">
+					<div class="tabs-div">
+						<button class="tab-button" onclick="setActive('presentation')" aria-selected="true">Présentation</button>
+					</div>
+				</li>
+				<li class="tabs-title specialites tabs-hide">
+					<div class="tabs-div">
+						<button class="tab-button" onclick="setActive('specialites')">Spécialités</button>
+					</div>
+				</li>
+				<li class="tabs-title equipe tabs-hide last">
+					<div class="tabs-div">
+						<button class="tab-button" onclick="setActive('equipe')">Equipe</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="cell medium-9">
+			<div class="tabs-content">
+				<div class="tabs-panel text-justify is-active presentation first">
+					<p>
+						Bienvenue sur le site de la clinique véterinaire spécialisée pour les petits et gros félins : <strong>CatClinic</strong>...
+					</p>
+					<p>
+						Vous y trouverez des conseils pratiques pour prendre soin de nos amis les chats, le détail des services et préstations proposées ainsi que tous les renseignements nécessaires pour prendre rendez-vous et nous trouver facilement. A bientôt...
+					</p>
+					<img src="images/ClinicExt.jpg" alt="Photo de la Clinique">
+				</div>
+				<div class="tabs-panel specialites">
+					<ul class="grid-x ul-content">
+						<li class="cell medium-3">
+							<div>
+								<img src="images/radiographie.jpg" alt="radiographie">
+								<p class="text-center">Radiographie</p>
+							</div>
+						</li>
+						<li class="cell medium-3">
+							<div>
+								<img src="images/échographie.png" alt="échographie">
+								<p class="text-center">Echographie</p>
+							</div>
+						</li>
+						<li class="cell medium-3">
+							<div>
+								<img src="images/sang.jpg" alt="analyse de sang">
+								<p class="text-center">Analyses de Sang</p>
+							</div>
+						</li>
+						<li class="cell medium-3">
+							<div>
+								<img src="images/cytologie.png" alt="cytologie">
+								<p class="text-center">Cytologie</p>
+							</div>
+						</li>
+						<li class="cell medium-3">
+							<div>
+								<img src="images/dentisterie.png" alt="dentisterie">
+								<p class="text-center">Dentisterie</p>
+							</div>
+						</li>
+						<li class="cell medium-3">
+							<div>
+								<img src="images/chirurgie.png" alt="">
+								<p class="text-center">Chirurgie</p>
+							</div>
+						</li>
+						<li class="cell medium-3">
+							<div>
+								<img src="images/hospitalisation.png" alt="">
+								<p class="text-center">Hospitalisation</p>
+							</div>
+						</li>
+						<li class="cell medium-3">
+							<div>
+								<img src="images/garde.png" alt="">
+								<p class="text-center">Service de Garde</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="tabs-panel equipe last">
+					<ul class="grid-x ul-content">
+						<li class="cell medium-3">
+							<div>
+								<img src="images/dr_remain.jpg" alt="docteur remain">
+								<p class="text-center">Docteur REMAIN André</p>
+							</div>
+						</li>
+						<li class="cell medium-3">
+							<div>
+								<img src="images/dr_burlotte.png" alt="docteur burlotte">
+								<p class="text-center">Docteur BURLOTTE Sylvie</p>
+							</div>
+						</li>
+						<li class="cell medium-3">
+							<div>
+								<img src="images/asv_abeauvaux.png" alt="asv abeauvaux">
+								<p class="text-center">ASV ABEAUVAUX Jérôme</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="cell medium-3 tabs-title-last">
+			<ul class="vertical tabs tabs-tabs">
+				<li class="tabs-title specialites">
+					<div class="tabs-div">
+						<button class="tab-button" onclick="setActive('specialites')">Spécialités</button>
+					</div>
+				</li>
+				<li id="last" class="tabs-title equipe last">
+					<div class="tabs-div">
+						<button class="tab-button" onclick="setActive('equipe')">Equipe</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+	</div>
 </div>

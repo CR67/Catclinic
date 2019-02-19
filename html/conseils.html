@@ -1,96 +1,118 @@
 <div class="grid-container">
-  <div class="grid-x grid-margin-x">
-    <div class="cell medium-3">
-      <ul class="vertical tabs">
-        <li class="tabs-title is-active first maladies">
-			<button class="tab-button" onclick="setActive('maladies')" aria-selected="true">Maladies et Vaccinations</button>
-		</li>
-        <li class="tabs-title dangers">
-			<button class="tab-button" onclick="setActive('dangers')">Dangers Domestiques</button>
-		</li>
-        <li class="tabs-title last administration">
-			<button class="tab-button" onclick="setActive('administration')">Admministration des Médicaments</button>
-		</li>
-      </ul>
-    </div>
-    <div class="cell medium-9">
-      <div class="tabs-content">
-        <div class="tabs-panel text-justify is-active maladies first">
-        	<p>
-        		<p><strong>Votre chat compte sur vous pour être protégé :</strong></p>
-        		L'un des meilleurs moyens de permettre à votre chat de vivre en bonne santé pendant de nombreuses années est de la faire vacciner contre les maladies félines les plus répandues. Au cours des premières semaines de sont existence, votre chat a reçu, par le lait de sa mère, des anticorps qui l'ont immunisé contre certaines maladies. Aprés cette période, c'est à vous qu'il revient de protéger votre compagnon, avec l'aide et les conseils de votre vétérinaire.
-        	</p>
-        	<hr>
-        	<p>
-        		<p><strong>Comment un vaccin fonctionne-t-il ? :</strong></p>
-        		Un vaccin contient une petite quantité de virus, de bactéries ou d'autres organismes causant des maladies. Ceux-ci ont été soit atténués soit tués. Lorsque ces organismes sont administrés à votre chat, ils stimulent son système immunitaire qui produit des cellules et des proteines qui combattent la maldie, "les anticorps", et protègent votre animal contre certaines maladies.
-        	</p>
-        	<hr>
-        	<p>
-        		<p><strong>Quand dois-je faire vacciner mon chat ? :</strong></p>
-        		En général, l'immunité qu'un chaton reçoit à sa naissance commence à s'estomper après <strong>9 semaines</strong>. C'est alors le moment, habituellement, de lui administrer ses premiers vaccins. Il doit recevoir un rappel de <strong>3 à 4 semaines plus tard</strong>. Par la suite, votre chat devra se faire vacciner régulièrement toute sa vie.Bien sûr, ce ne sont que des lignes directrices. Votre vétérinaire sera en mesure de déterminer le programme de vaccinationqui répondra parfaitement aux besoins de votre compagnon félin.
-        	</p>
+	<div class="grid-x">
+		<div class="cell medium-3 tabs-title-first">
+			<ul class="vertical tabs tabs-tabs">
+				<li class="tabs-title is-active first maladies">
+                    <div class="tabs-div">
+					    <button class="tab-button" onclick="setActive('maladies')" aria-selected="true">Maladies et Vaccinations</button>
+                    </div>
+				</li>
+				<li class="tabs-title dangers tabs-hide">
+                    <div class="tabs-div">
+					    <button class="tab-button" onclick="setActive('dangers')">Dangers Domestiques</button>
+                    </div>
+				</li>
+				<li class="tabs-title last administration tabs-hide">
+                    <div class="tabs-div">
+					    <button class="tab-button" onclick="setActive('administration')">Admministration des Médicaments</button>
+                    </div>
+				</li>
+			</ul>
+		</div>
+		<div class="cell medium-9">
+			<div class="tabs-content">
+				<div class="tabs-panel text-justify is-active maladies first">
+					<p>
+					<p><strong>Votre chat compte sur vous pour être protégé :</strong></p>
+					L'un des meilleurs moyens de permettre à votre chat de vivre en bonne santé pendant de nombreuses années est de le faire vacciner contre les maladies félines les plus répandues. Au cours des premières semaines de son existence, votre chat a reçu, par le lait de sa mère, des anticorps qui l'ont immunisés contre certaines maladies. Aprés cette période, c'est à vous qu'il revient de protéger votre compagnon, avec l'aide et les conseils de votre vétérinaire.
+					</p>
+					<hr>
+					<p>
+					<p><strong>Comment un vaccin fonctionne-t-il ? :</strong></p>
+					Un vaccin contient une petite quantité de virus, de bactéries ou d'autres organismes causant des maladies. Ceux-ci ont été soit atténués soit tués. Lorsque ces organismes sont administrés à votre chat, ils stimulent son système immunitaire qui produit des cellules et des proteines qui combattent la maladie, "les anticorps", et protègent votre animal contre certaines maladies.
+					</p>
+					<hr>
+					<p>
+					<p><strong>Quand dois-je faire vacciner mon chat ? :</strong></p>
+					En général, l'immunité qu'un chaton reçoit à sa naissance commence à s'estomper après <strong>9 semaines</strong>. C'est alors le moment, habituellement, de lui administrer ses premiers vaccins. Il doit recevoir un rappel de <strong>3 à 4 semaines plus tard</strong>. Par la suite, votre chat devra se faire vacciner régulièrement toute sa vie.Bien sûr, ce ne sont que des lignes directrices. Votre vétérinaire sera en mesure de déterminer le programme de vaccination qui répondra parfaitement aux besoins de votre compagnon félin.
+					</p>
+				</div>
+				<div class="tabs-panel text-justify dangers">
+					<p>
+					<p><strong>Comment faire de votre maison un endroit sûr pour vos animaux domestiques ? :</strong></p>
+					Tout comme les parents rendent leur maison à l'épreuve de leurs enfants, les propriétaires d'animaux domestiques devraient faire de même pour leur animal domestique. Nos compagnons à quatre pattes sont comme les bébés et les bambins : curieux de nature, ils sont portés à explorer leur environnement avec leurs pattes et leurs griffes et à goûter à tous.
+					</p>
+					<hr>
+					<img src="images/domestique.png" alt="accident domestique">
+				</div>
+				<div class="tabs-panel text-justify administration last">
+					<p>
+						Tout comme vous, votre animal sera malade et il est probable que vous serez ammené à lui administrer des médicaments prescrits par votre vétérinaire. l'emploi d'une bonne méthode facilitera la vie de tout le monde...
+					</p>
+					<hr>
+					<p>
+					<p><strong>Les comprimés ou gélules :</strong></p>
+					C'est certainement le seul médicament que l'on puisse lui administrer sans problème. Contrairement à ce que l'on croit, votre animal est parfaitement capable d'avaler de gros comprimés.
+					<p>
+					<ul>
+						<strong>1ère Etape :</strong>
+						<li>Placez le comprimé entre vos doigts.</li>
+						<li>De l'autre main, tenez sa tête par derrière, le menton doit passer à la verticale.</li>
+						<strong>2ème Etape :</strong>
+						<li>Maintenant, ses yeux fixent le plafond, la lèvre inférieure baille spontanément.</li>
+						<li>Si votre animal n'ouvre pas la gueule, exercez une légère pression sur sa mâchoire inférieure à l'aide de votre majeur.</li>
+						<strong>3ème Etape :</strong>
+						<li>Laissez votre majeur sur les petites incisives de votre animal afin que sa gueule reste ouverte.</li>
+						<li>Déposez le comprimé le plus loin possible dans la gueule.</li>
+						<li>Refermez la gueule.</li>
+						<strong>4ème Etape :</strong>
+						<li>Massez sa gorge ou soufflez sur son nez pour l'inciter à déglutir.</li>
+					</ul>
+					</p>
+					</p>
+					<hr>
+					<p>
+					<p><strong>Les liquides :</strong></p>
+					Agitez le flacon si cela est décanté.
+					<p>
+					<ul>
+						<strong>1ère Etape :</strong>
+						<li>Tout d'abord, remplissez une seringue du médicament.</li>
+						<strong>2ème Etape :</strong>
+						<li>Le médicament liquide doit être versé dans l'espace entre la canine et les molaires.</li>
+						<strong>3ème Etape :</strong>
+						<li>Tenez les mâchoires de votre animal fermées et renversez légèrement sa tête vers l'arrière.</li>
+					</ul>
+					</p>
+					<hr>
+					<p>
+					<p><strong>Conseils pratiques :</strong></p>
+					<ul>
+						<li>Lisez attentivement l'étiquette.</li>
+						<li>Demandez à votre vétérinaire à quel moment du repas le médicament peut être donné.</li>
+						<li>Cachez le comprimé dans un morceau d'aliment appétent (viande hachée, fromage...).</li>
+						<li>Lorsque la taille de l'animal le permet, il est plus facile d'administrer le médicament si l'animal est sur une table.</li>
+						<li>Lorsque vous donnez un médicament, demeurez calme, car votre animal peut sentir votre nervosité, ce qui rendra votre tâche plus difficile. Vous devez toujours le féliciter et le récompenser avec une gâterie.</li>
+						<li>Pour éviter de mettre vos doigts dans la gueule de votre compagnon, vous pouvez utiliser une seringue spéciale. Il s'agit d'un tube en plastique similaire à une seringue qui permet de déposer le comprimé ou la capsule dans la gueule de l'animal.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+        <div class="cell medium-3 tabs-title-last">
+            <ul class="vertical tabs tabs-tabs">
+                <li class="tabs-title dangers">
+                    <div class="tabs-div">
+                        <button class="tab-button" onclick="setActive('dangers')">Dangers Domestiques</button>
+                    </div>
+                </li>
+                <li id="last" class="tabs-title last administration">
+                    <div class="tabs-div">
+                        <button class="tab-button" onclick="setActive('administration')">Admministration des Médicaments</button>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div class="tabs-panel text-justify dangers">
-        	<p>
-        		<p><strong>Comment faire de votre maison un endroit sûr pour vos animaux domestiques ? :</strong></p>
-        		Tout comme les parents rendent leur maison à l'épreuve de leurs enfants, les propriétaires d'animaux domestiques devraient faire de même pour leur animal domestique. Nos compagnons à quatre pattes sont comme les bébés et les bambins : curieux de nature, ils sont portés à explorer leur environnement avec leurs pattes et leurs griffes et à gouter à tous.
-        	</p>
-        	<hr>
-        	<img src="images/domestique.png" alt="accident domestique">
-        </div>
-        <div class="tabs-panel text-justify administration last">
-        	<p>
-        		Tout comme vous, votre animal sera malade et il est probable que vous deviez lui administrer des médicaments prescrits par votre vétérinaire. l'emploi d'une bonne méthode facilitera la vie de tout le monde...
-        	</p>
-        	<hr>
-        	<p>
-        		<p><strong>Les comprimés ou gélules :</strong></p>
-        		C'est certainement le seul médicament qu'on puisse lui administrer sans problème. Contrairement à ce qu'on croit, votre animal est parfaitement capable d'avaler de gros comprimés.
-        		<p>
-	        		<ul>
-	        			<strong>1ère Etape :</strong>
-	        			<li>Placer le comprimé entre vos doigts.</li>
-	        			<li>De l'autre main, tenez sa tête par derrière, le menton doit passer à la verticale.</li>
-	        			<strong>2ème Etape :</strong>
-	        			<li>Maintenant, ses yeux fixent le plafond, la lèvre inférieure baille spontanément.</li>
-	        			<li>Si votre animal n'ouvre pas la gueule, exercé une légère pression sur sa mâchoire inférieure à l'aide de votre majeur.</li>
-	        			<strong>3ème Etape :</strong>
-	        			<li>Laissez votre majeur sur les petites incisives de votre animal afin que sa gueule reste ouverte.</li>
-	        			<li>Déposer le comprimé le plus loin possible dans la gueule.</li>
-	        			<li>Refermer la gueule.</li>
-	        			<strong>4ème Etape :</strong>
-	        			<li>Massez sa gorge ou soufflez sur son nez pour l'inciter à déglutir.</li>
-	        		</ul>
-        		</p>
-        	</p>
-        	<hr>
-        	<p>
-        		<p><strong>Les liquides :</strong></p>
-        		Agitez le flacon si cela est décanté.
-        		<p>
-        			<ul>
-        				<strong>1ère Etape :</strong>
-        				<li>Tout d'abord, remplissez une seringue du médicament.</li>
-        				<strong>2ème Etape :</strong>
-        				<li>Le médicament liquide doit être versé dans l'espace entre la canine et les molaires.</li>
-        				<strong>3ème Etape :</strong>
-        				<li>Tenez les machoires de votre animal fermées et renversez légèrement sa tête vers l'arrière.</li>
-        			</ul>
-        		</p>
-        	<hr>
-        	<p>
-        		<p><strong>Conseils pratiques :</strong></p>
-        		<ul>
-        			<li>Lisez attentivement l'étiquette.</li>
-        			<li>Demandez à votre vétérinaire à quel moment du repas le médicament peut être donné.</li>
-        			<li>Cacher le comprimé dans un morceau d'aliment appétent (viande hachée, fromage...).</li>
-        			<li>Lorsque la taille de l'animal le permet, il est plus facile d'administrer le médicament si l'animal est sur une table.</li>
-        			<li>Lorsque vous donnez un médicament, demeurez calme, car votre animal peut sentir votre nervosité, ce qui rendra votre tâche plus difficile. Vous devez toujours le féliciter et le récompenser avec une gâterie.</li>
-        			<li>Pour éviter de mettre vos doigts dans la gueule de votre compagnon, vous pouvez utiliser une seringue spéciale. Il s'agit d'un tube en plastique similaire à une seringue qui permet de déposer le comprimé ou la capsule dans la gueule de l'animal.</li>
-        		</ul>
-        </div>
-      </div>
-    </div>
-  </div>
+
+	</div>
 </div>
