@@ -5,11 +5,6 @@
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
-@media print, screen and (min-width: 40em) {
-  .reveal, .reveal.tiny, .reveal.small, .reveal.large {
-    right: auto;
-    left: auto;
-    margin: 0 auto; } }
 
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -19,54 +14,9 @@ html {
 body {
   margin: 0; }
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0; }
-
-hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  height: 0;
-  overflow: visible; }
-
-pre {
-  font-family: monospace, monospace;
-  font-size: 1em; }
-
-a {
-  background-color: transparent; }
-
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; }
-
 b,
 strong {
   font-weight: bolder; }
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em; }
-
-small {
-  font-size: 80%; }
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
-
-sub {
-  bottom: -0.25em; }
-
-sup {
-  top: -0.5em; }
 
 img {
   border-style: none; }
@@ -120,9 +70,6 @@ legend {
   padding: 0;
   white-space: normal; }
 
-progress {
-  vertical-align: baseline; }
-
 textarea {
   overflow: auto; }
 
@@ -143,24 +90,8 @@ textarea {
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit; }
-
-details {
-  display: block; }
-
-summary {
-  display: list-item; }
-
-template {
-  display: none; }
-
 [hidden] {
   display: none; }
-
-.foundation-mq {
-  font-family: "small=0em&medium=40em&large=64em&xlarge=75em&xxlarge=90em"; }
 
 html {
   -webkit-box-sizing: border-box;
@@ -229,9 +160,6 @@ button {
   cursor: auto; }
   [data-whatinput='mouse'] button {
     outline: 0; }
-
-pre {
-  overflow: auto; }
 
 button,
 input,
@@ -2303,56 +2231,9 @@ ul.ul-content {
   list-style-type: none;
   margin: 0; }
 
-ol {
-  margin-left: 1.25rem; }
-
 ul ul, ol ul, ul ol, ol ol {
   margin-left: 1.25rem;
   margin-bottom: 0; }
-
-dl {
-  margin-bottom: 1rem; }
-  dl dt {
-    margin-bottom: 0.3rem;
-    font-weight: bold; }
-
-blockquote {
-  margin: 0 0 1rem;
-  padding: 0.5625rem 1.25rem 0 1.1875rem;
-  border-left: 1px solid #cacaca; }
-  blockquote, blockquote p {
-    line-height: 1.6;
-    color: #8a8a8a; }
-
-cite {
-  display: block;
-  font-size: 0.8125rem;
-  color: #8a8a8a; }
-  cite:before {
-    content: "— "; }
-
-abbr, abbr[title] {
-  border-bottom: 1px dotted #0a0a0a;
-  cursor: help;
-  text-decoration: none; }
-
-figure {
-  margin: 0; }
-
-code {
-  padding: 0.125rem 0.3125rem 0.0625rem;
-  border: 1px solid #cacaca;
-  background-color: #e6e6e6;
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-  font-weight: normal;
-  color: #0a0a0a; }
-
-kbd {
-  margin: 0;
-  padding: 0.125rem 0.25rem 0;
-  background-color: #e6e6e6;
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-  color: #0a0a0a; }
 
 .subheader {
   margin-top: 0.2rem;
@@ -5175,15 +5056,12 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 .table-scroll {
   overflow-x: auto; }
 
-.tabs-title-last {
-  display: none;
-}
-
 .tabs {
   margin-top: 3rem;
   margin-right: -0.1rem;
-  border: 1px solid #9e904a;
-  border-right: 0;
+  border-top : 1px solid #9e904a;
+  border-left : 1px solid #9e904a;
+  border-right: none;
   background: #f7efc5;
   list-style-type: none; }
   .tabs::before, .tabs::after {
@@ -5261,8 +5139,10 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
     }
     .tabs-title.is-active.last {
       border-top: 1px solid #9e904a;
-      border-bottom: 0;
+      border-bottom: 1px solid #9e904a;
       position: relative; }
+.tabs-title.last {
+  border-bottom: 1px solid #9e904a; }
 
 .tabs-content {
   margin-top: 3rem;
@@ -5286,6 +5166,9 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   padding: 1rem; }
   .tabs-panel.is-active {
     display: block; }
+  .tabs-panel.inside {
+    display: none;
+  }
 
 .thumbnail {
   display: inline-block;
