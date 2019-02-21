@@ -14,7 +14,7 @@
 										Nom :<input type="text" name="nom" value="" placeholder="Votre Nom" size="30" />
 										Prénom :<input type="text" name="prenom" value="" placeholder="Votre Prénom" size="30" />
 										Adresse Mail :<input type="text" name="mail" value="" placeholder="Votre Adresse Mail" size="40" />
-										Votre Message :</br><textarea rows="5" name="message" value="" placeholder="Votre Message (taille max 250 car.)"></textarea>
+										Votre Message :</br><textarea rows="5" name="message" value="" placeholder="Votre Message (taille max 250 car.)" onkeyup="MaxCar(this)"></textarea>
 										<input type="button" value="Envoyer">
 										<input type="reset" value="Annuler">
 									</p>
@@ -54,15 +54,26 @@
 		<div class="cell medium-9">
 			<div class="tabs-content">
 				<div class="tabs-panel text-justify is-active formulaire first">
-					<form action="" method="post">
+					<form method="post">
 						<fieldset class="fieldset">
 							<legend>Formulaire de contact par mail :</legend>
 							<p>
-								Nom :<input type="text" name="nom" value="" placeholder="Votre Nom" size="30" />
-								Prénom :<input type="text" name="prenom" value="" placeholder="Votre Prénom" size="30" />
-								Adresse Mail :<input type="text" name="mail" value="" placeholder="Votre Adresse Mail" size="40" />
-								Votre Message :</br><textarea rows="5" name="message" value="" placeholder="Votre Message (taille max 250 car.)"></textarea>
-								<input type="button" value="Envoyer">
+								Nom:<input type="text" name="nom" placeholder="Votre Nom" size="30" />
+								Prénom:<input type="text" name="prenom" placeholder="Votre Prénom" size="30" />
+								Adresse Mail:<input type="text" name="mail" placeholder="Votre Adresse Mail" size="40" />
+								Sujet:<select name="sujet">
+											<option value="Autre" selected>Autre...</option>
+											<option value="Radiographie">Radiographie</option>
+											<option value="Echographie">Echographie</option>
+											<option value="Analyse de sang">Analyse de sang</option>
+											<option value="Cytologie">Cytologie</option>
+											<option value="Dentisterie">Dentisterie</option>
+											<option value="Chirurgie">Chirurgie</option>
+											<option value="Hospitalisation">Hospitalisation</option>
+											<option value="Service de garde">Service de garde</option>
+										</select>
+								Votre Message:</br><textarea rows="5" name="message" placeholder="Votre Message (taille max 250 car.)" onkeyup="MaxCar(this)"></textarea>
+								<input type="submit" value="Envoyer">
 								<input type="reset" value="Annuler">
 							</p>
 						</fieldset>
