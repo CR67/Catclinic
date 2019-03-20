@@ -2239,7 +2239,8 @@ h6, .h6 {
   font-size: 1rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem;
+  font-weight: bold; }
 
 @media print, screen and (min-width: 40em) {
   h1, .h1 {

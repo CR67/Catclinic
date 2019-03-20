@@ -4,8 +4,9 @@ global $content;
 
 $vheader = new VHeader();
 $vcontent = new $content['class']();
+$bdtool = new BDTools();
 
-require_once('view/mail.php');
+/*require_once('view/mail.php');*/
 
 ?>
 <!DOCTYPE html>
@@ -13,8 +14,9 @@ require_once('view/mail.php');
 <head>
 	<meta charset="utf-8" />
 	<title><?= $content['title'] ?></title>
-    <link rel="stylesheet" type="text/css" href="css/foundation.css" />
-    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" href="css/foundationorigin.css" />
+    <link rel="stylesheet" type="text/css" href="css/editeur.css" />
+    <!--<link rel="stylesheet" type="text/css" href="css/app.css" />-->
 </head>
 
 	<body>
@@ -28,15 +30,26 @@ require_once('view/mail.php');
 	</div><!-- id="content" -->
 
 
-
 		<script src="js/ajax.js"></script>
-        <script src="js/activation.js"></script>
+        <script src="js/editeur.js"></script>
+        <!--<script src="js/activation.js"></script>-->
         <script src="js/compteur.js"></script>
-		<script src="js/init.js"></script>
+		<!--<script src="js/init.js"></script>-->
         <script src="js/jquery.js"></script>
         <script src="js/foundation.js"></script>
         <script>
-            $(document).foundation();
+            $('#example-tabs').foundation();
+            $('#radiographie-dropdown').foundation();
+            $('#echographie-dropdown').foundation();
+            $('#sang-dropdown').foundation();
+            $('#cytologie-dropdown').foundation();
+            $('#dentisterie-dropdown').foundation();
+            $('#chirurgie-dropdown').foundation();
+            $('#hospitalisation-dropdown').foundation();
+            $('#garde-dropdown').foundation();
+            $('#remain-dropdown').foundation();
+            $('#burlotte-dropdown').foundation();
+            $('#abeauvaux-dropdown').foundation();
         </script>
 	</body>
 </html>

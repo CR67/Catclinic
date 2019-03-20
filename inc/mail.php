@@ -34,12 +34,18 @@ if(isset($_POST['message'])){
                 <br>
                 <p>'.$_POST['message'].'</p>';
 
-    $test = mail('chris1967.1701@gmail.com', $_POST['sujet'], $contenu, $entete);
+    $test = '1';
 
     if($test){
-        echo '<script>alert("Message envoyè !");</script>';
+        echo '<script>
+                alert("Message envoyè !");
+                history.go(-1);
+              </script>';
     }else{
-        echo '<script>alert("Message non envoyé !");</script>';
+        echo '<script>
+                alert("Message non envoyé !");
+                history.go(-1);
+              </script>';
     }
 }
 ?>

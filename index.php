@@ -10,6 +10,9 @@ switch ($EX)
   case 'accueil': accueil(); exit;
   case 'conseils': conseils(); exit;
   case 'contacts': contacts();  exit;
+  case 'administration': administration(); exit;
+  case 'modiffiche': modiffiche(); exit;
+  case 'ajoutfiche': ajoutfiche(); exit;
 }
 
 require('view/layout.view.php');
@@ -53,4 +56,32 @@ function contacts()
   return;
   
 }
+
+function administration()
+{
+  $vhtml = new VHtml();
+  $vhtml->showHtml('html/administration.html');
+
+  return;
+
+}
+
+function modiffiche()
+{
+  $vhtml = new VHtml();
+  $vhtml->showHtml('html/modiffiche.html');
+
+  return;
+
+}
+
+function ajoutfiche()
+{
+  $vhtml = new VHtml();
+  $vhtml->showHtml('html/ajoutfiche.html');
+
+  return;
+
+}
+
 ?>

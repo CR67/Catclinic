@@ -52,9 +52,11 @@ var elem = 'menu-accueil';
 function changeContent(iddiv, idbutton, url, param, callback)
 {
     // Modifie la classe des boutons du menu de navigation principal afin de les rendre "actifs" ou non ce qui permet de leur appliquer le bon style css
-  document.getElementById(elem).classList.remove('is-active');
-  elem = idbutton;
-  document.getElementById(idbutton).classList.add('is-active');
+  if(idbutton !== 'null'){
+    document.getElementById(elem).classList.remove('is-active');
+    elem = idbutton;
+    document.getElementById(idbutton).classList.add('is-active');
+  }
 
   if(iddiv && url && param){
     // Récupère l'élément cible dont l'identifiant vaut id
