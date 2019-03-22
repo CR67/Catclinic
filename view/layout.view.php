@@ -29,7 +29,6 @@ $bdtool = new BDTools();
 		<?php $vcontent->{$content['method']}($content['arg']) ?>
 	</div><!-- id="content" -->
 
-
 		<script src="js/ajax.js"></script>
         <script src="js/editeur.js"></script>
         <!--<script src="js/activation.js"></script>-->

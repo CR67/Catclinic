@@ -8,15 +8,7 @@ $bdtool = new BDTools();
 	<div class="grid-x grid-margin-x">
 		<div class="cell medium-3">
 			<ul class="vertical tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" id="example-tabs">
-				<li class="tabs-title is-active">
-					<a href="#<?php echo utf8_encode($bdtool->affichRefArticle(0)); ?>" aria-selected="true"><?php echo utf8_encode($bdtool->affichTitreArticle(0)); ?></a>
-				</li>
-				<li class="tabs-title">
-					<a href="#<?php echo utf8_encode($bdtool->affichRefArticle(1)); ?>"><?php echo utf8_encode($bdtool->affichTitreArticle(1)); ?></a>
-				</li>
-				<li class="tabs-title">
-					<a href="#<?php echo utf8_encode($bdtool->affichRefArticle(2)); ?>"><?php echo utf8_encode($bdtool->affichTitreArticle(2)); ?></a>
-				</li>
+                <?php echo utf8_encode($bdtool->affichageTitres()); ?>
 			</ul>
 		</div>
 		<div class="cell medium-9">

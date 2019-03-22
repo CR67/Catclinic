@@ -44,6 +44,49 @@ class BDTools
         }
     }
 
+    function compterFiche () {
+        try {
+            $bdd = $this->connect();
+            $stmt = $bdd->prepare('SELECT COUNT(*) FROM article WHERE pubarticle = "1" ');
+            $stmt->execute();
+            $nbrcol = intval($stmt->fetchColumn());
+            return $nbrcol;
+        } catch (PDOException $ex) {
+            print"Erreur de connexion : " . $ex->getMessage() . "</br>";
+            die();
+        }
+    }
+
+    function affichageTitres () {
+        try {
+            $result = "";
+            $nbrcol = $this->compterFiche();
+            $result = $result."<li class='tabs-title is-active'><a href='#".$this->affichRefArticle(0)."' aria-selected='true'>".$this->affichTitreArticle(0)."</a>";
+            for ($i=0; $i<($nbrcol-1); $i++){
+                $result = $result."<li class='tabs-title'><a href='#".$this->affichRefArticle($i+1)."'>".$this->affichTitreArticle($i+1)."</a>";
+            }
+            return $result;
+        } catch (PDOException $ex) {
+            print"Erreur de connexion : " . $ex->getMessage() . "</br>";
+            die();
+        }
+    }
+
+    function affichageFiches () {
+        try {
+            $result = "";
+            $nbrcol = $this->compterFiche();
+            $result = $result."<div class='tabs-panel is-active' id='".$this->affichRefArticle(0)."'>".$this->affichContArticle(0)."</div>";
+            for ($i=0; $i<($nbrcol-1); $i++){
+                $result = $result."<div class='tabs-panel' id='".$this->affichRefArticle($i+1)."'>".$this->affichContArticle($i+1)."</div>";
+            }
+            return $result;
+        } catch (PDOException $ex) {
+            print"Erreur de connexion : " . $ex->getMessage() . "</br>";
+            die();
+        }
+    }
+
     public function affichContArticle($index) {
         try {
             $bdd = $this->connect();

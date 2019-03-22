@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+$_SESSION["login"] = "root";
+
 require ('inc/require.inc.php');
 
 $EX = isset ($_REQUEST['EX']) ? $_REQUEST['EX'] : 'home';
@@ -60,7 +63,15 @@ function contacts()
 function administration()
 {
   $vhtml = new VHtml();
-  $vhtml->showHtml('html/administration.html');
+  if (isset($_SESSION["login"])) {
+    if ($_SESSION["login"] === "root") {
+      $vhtml->showHtml('html/root.html');
+    }else {
+      $vhtml->showHtml('html/administration.html');
+    }
+  }else{
+    $vhtml->showHtml('html/connexion.html');
+  }
 
   return;
 
