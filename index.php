@@ -1,9 +1,11 @@
 <?php
 
-session_start();
-$_SESSION["login"] = "root";
+if(!session_id()){
+  session_start();
+}
 
-require ('inc/require.inc.php');
+require_once ('inc/require.inc.php');
+require_once ('inc/mail.inc.php');
 
 $EX = isset ($_REQUEST['EX']) ? $_REQUEST['EX'] : 'home';
 
@@ -63,24 +65,63 @@ function contacts()
 function administration()
 {
   $vhtml = new VHtml();
-  if (isset($_SESSION["login"])) {
-    if ($_SESSION["login"] === "root") {
-      $vhtml->showHtml('html/root.html');
-    }else {
-      $vhtml->showHtml('html/administration.html');
+
+  global $content;
+
+  $content['title'] = 'CatClinic';
+  $content['class'] = 'VHtml';
+  $content['method'] = 'showHtml';
+
+  if(isset($_GET['switch'])){
+
+    if($_GET['switch'] !== "false") {
+
+      if(!isset($_SESSION['login'])){
+
+        $_SESSION['login'] = $_GET['switch'];
+
+      }
+
+      $content['arg'] = 'html/accueil.html';
+
+    }else{
+
+      $content['arg'] = 'html/connexion.html';
+
     }
+
+    include 'view/layout.view.php';
+
+    return;
+
   }else{
-    $vhtml->showHtml('html/connexion.html');
+
+    if (isset($_SESSION["login"])) {
+
+      if ($_SESSION["login"] === "root") {
+
+        $vhtml->showHtml('html/root.php');
+
+      }else {
+
+        $vhtml->showHtml('html/administration.php');
+
+      }
+
+    }else{
+
+      $vhtml->showHtml('html/connexion.html');
+
+    }
+
+    return;
   }
-
-  return;
-
 }
 
 function modiffiche()
 {
   $vhtml = new VHtml();
-  $vhtml->showHtml('html/modiffiche.html');
+  $vhtml->showHtml('html/modiffiche.php');
 
   return;
 

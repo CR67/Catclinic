@@ -4,9 +4,6 @@ global $content;
 
 $vheader = new VHeader();
 $vcontent = new $content['class']();
-$bdtool = new BDTools();
-
-/*require_once('view/mail.php');*/
 
 ?>
 <!DOCTYPE html>

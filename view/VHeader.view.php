@@ -10,7 +10,7 @@ class VHeader
   public function showHeader()
   {
     $vhtml = new VHtml();
-    $vhtml->showHtml('html/header.html');
+    $vhtml->showHtml('html/header.php');
 
     return;
     
