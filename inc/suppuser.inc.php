@@ -4,6 +4,6 @@
 
     $idusers = $_POST['userselect1'];
     $usertools->suppUser($idusers);
-    header('Location: ../index.php?EX=administration&switch=1');
+    echo '<script>document.location.replace("http://localhost/Catclinic/index.php?EX=administration&switch=1")</script>';
     exit();
 ?>

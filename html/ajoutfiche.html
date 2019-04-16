@@ -1,23 +1,33 @@
-<form action="inc/upload.php" method="post" enctype="multipart/form-data">
+<form action="inc/addart.inc.php" method="post">
     <fieldset class="fieldset">
         <legend>Ajouter une Fiche</legend>
-    <label for="titre">Titre du Contenu :</label><input type="text" name="titre" id="titre" value="" placeholder="Titre de contenu..." size="30" />
-    <input type="button" value="G" style="font-weight:bold;" onclick="commande('bold')">
-    <input type="button" value="I" style="font-style:italic;" onclick="commande('italic')">
-    <input type="button" value="S" style="text-decoration:underline;" onclick="commande('underline')">
-    <input type="button" value="Lien" onclick="commande('createLink');">
-    <input type="button" value="Insérer Image" onclick="commande('insertImage');">
-    <select onchange="commande('heading', this.value); this.selectedIndex = 0;">
-        <option value="">Titre</option>
-        <option value="h1">Titre 1</option>
-        <option value="h2">Titre 2</option>
-        <option value="h3">Titre 3</option>
-        <option value="h4">Titre 4</option>
-        <option value="h5">Titre 5</option>
-        <option value="h6">Titre 6</option>
-    </select>
-    <div id="editeur" contentEditable >
-
-    </div>
+        <label for="titre">Titre du Contenu :</label><input type="text" name="titre" id="titre" value="" placeholder="Titre de contenu..." size="30" />
+        <label for="reference">Référence du Contenu :</label><input type="text" name="reference" id="reference" value="" placeholder="Référence de l'article... (pas d'espace)" size="30" />
+        <input type="button" value="G" style="font-weight:bold;" onclick="commande('bold')">
+        <input type="button" value="I" style="font-style:italic;" onclick="commande('italic')">
+        <input type="button" value="S" style="text-decoration:underline;" onclick="commande('underline')">
+        <input type="button" value="Lien" onclick="commande('createLink');">
+        <input type="button" value="Gauche" onclick="commande('justifyleft');">
+        <input type="button" value="Droit" onclick="commande('justifyright');">
+        <input type="button" value="Centré" onclick="commande('justifycenter');">
+        <input type="button" value="Justifié" onclick="commande('justifyfull');">
+        <input type="button" value="Liste" onclick="commande('insertunorderedlist');">
+        <input type="button" value="Séparation" onclick="commande('inserthorizontalrule');">
+        <input type="button" value="Paragraphe" onclick="commande('insertParagraph');">
+        <input type="button" value="Annuler" onclick="commande('undo');">
+        <select onchange="commande('heading', this.value); this.selectedIndex = 0;">
+            <option value="">Titre</option>
+            <option value="h1">Titre 1</option>
+            <option value="h2">Titre 2</option>
+            <option value="h3">Titre 3</option>
+            <option value="h4">Titre 4</option>
+            <option value="h5">Titre 5</option>
+            <option value="h6">Titre 6</option>
+        </select>
+    <div id="editeur" contentEditable ></div>
+        <input type="button" onclick="document.getElementById('resultat').value = document.getElementById('editeur').innerHTML;" value="Obtenir le HTML" ><br />
+        <textarea id="resultat" name="resultat" row="20"></textarea>
+    <input type="submit" value="Création">
+    <input type="reset" value="Annuler">
     </fieldset>
 </form>

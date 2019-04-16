@@ -39,12 +39,12 @@ if(isset($_POST['message'])){
     if($test){
         echo '<script>
                 alert("Message envoyè !");
-                history.go(-1);
+                document.location.replace("http://localhost/Catclinic/index.php?EX=accueil");
               </script>';
     }else{
         echo '<script>
                 alert("Message non envoyé !");
-                history.go(-1);
+                document.location.replace("http://localhost/Catclinic/index.php?EX=accueil"));
               </script>';
     }
 }

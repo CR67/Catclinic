@@ -1,5 +1,6 @@
 <?php
 
+include ('BDTools.view.php');
 
 class ARTTools
 {
@@ -10,26 +11,39 @@ class ARTTools
     public function __destruct(){
     }
 
-/*Ajouter un article, sauvegarde en BD avec ou sans publication (variable $publie à 1 ou 0)*/
-    public function ajoutArticle($titre, $contenu, $publie) {
+/*Ajouter un article*/
+    public function ajoutArticle($titre, $contenu, $reference) {
         try {
            $bdtools = new BDTools();
             $bdd = $bdtools->connect();
-            $stmt = $bdd->prepare('INSERT INTO article (titrearticle, contenuarticle, pubarticle, datearticle) VALUES (:titreartcle, :contenuarticle, :pubarticle, :datearticle)');
-            $stmt->execute(array('titrearticle' => $titre, 'contenuarticle' => $contenu, 'pubarticle' => $publie, 'datearticle' =>  DateTime()));
+            $date = date("Y-m-d H:i:s");
+            $stmt = $bdd->prepare('INSERT INTO article (titrearticle, contenuarticle, refarticle, datearticle) VALUES (:titrearticle, :contenuarticle, :refarticle, :datearticle)');
+            if($stmt->execute(array('titrearticle' => $titre, 'contenuarticle' => $contenu, 'refarticle' => $reference, 'datearticle' => $date ))) {
+                $result = '<script>alert("Ajout effectué.")</script>';
+                echo $result;
+            }else{
+                $result = '<script>alert("Erreur. Ajout annulé.")</script>';
+                echo $result;
+            }
         } catch (PDOException $ex) {
             print"Erreur de connexion : " . $ex->getMessage() . "</br>";
             die();
         }
     }
 
-/*Supprimer définitive d'un article*/
+/*Supprimer un article*/
     public function suppArticle($idarticle) {
         try {
             $bdtools = new BDTools();
              $bdd = $bdtools->connect();
             $stmt = $bdd->prepare('DELETE FROM article WHERE idarticle = :idarticle');
-            $stmt->execute(array('idarticle' => $idarticle));
+            if($stmt->execute(array('idarticle' => $idarticle))) {
+                $result = '<script>alert("Suppression effectuée.")</script>';
+                echo $result;
+            }else{
+                $result = '<script>alert("Erreur. Suppression annulée.")</script>';
+                echo $result;
+            }
         } catch (PDOException $ex) {
             print"Erreur de connexion : " . $ex->getMessage() . "</br>";
             die();
@@ -41,8 +55,15 @@ class ARTTools
         try {
             $bdtools = new BDTools();
              $bdd = $bdtools->connect();
+            $date = date("Y-m-d H:i:s");
             $stmt = $bdd->prepare('UPDATE article SET contenuarticle = :contenuarticle, datearticle = :datearticle');
-            $stmt->execute(array('contenuarticle' => $contenu, 'datearticle' => DateTime()));
+            if($stmt->execute(array('contenuarticle' => $contenu, 'datearticle' => $date))) {
+                $result = '<script>alert("Modification effectuée.")</script>';
+                echo $result;
+            }else{
+                $result = '<script>alert("Erreur. Modification annulée.")</script>';
+                echo $result;
+            }
         } catch (PDOException $ex) {
             print"Erreur de connexion : " . $ex->getMessage() . "</br>";
             die();
@@ -54,7 +75,7 @@ class ARTTools
         try {
             $bdtools = new BDTools();
              $bdd = $bdtools->connect();
-            $stmt = $bdd->prepare('SELECT COUNT(*) FROM article WHERE pubarticle = "1" ');
+            $stmt = $bdd->prepare('SELECT COUNT(*) FROM article');
             $stmt->execute();
             $nbrcol = intval($stmt->fetchColumn());
             return $nbrcol;
@@ -81,6 +102,7 @@ class ARTTools
         }
     }
 
+/*Afficher l'article*/
     function affichageFiches () {
         try {
             $result = "";
@@ -96,11 +118,12 @@ class ARTTools
         }
     }
 
+/*Récupérer contenu de l'article*/
     public function affichContArticle($index) {
         try {
             $bdtools = new BDTools();
              $bdd = $bdtools->connect();
-            $stmt = $bdd->prepare('SELECT contenuarticle FROM article WHERE pubarticle = "1" ');
+            $stmt = $bdd->prepare('SELECT contenuarticle FROM article');
             $stmt->execute();
             $result = $stmt->fetchAll();
             return $result[$index][0];
@@ -110,11 +133,12 @@ class ARTTools
         }
     }
 
+/*Récupérer titre de l'article*/
     public function affichTitreArticle($index) {
         try {
             $bdtools = new BDTools();
              $bdd = $bdtools->connect();
-            $stmt = $bdd->prepare('SELECT titrearticle FROM article WHERE pubarticle = "1"');
+            $stmt = $bdd->prepare('SELECT titrearticle FROM article');
             $stmt->execute();
             $result = $stmt->fetchAll();
             return $result[$index][0];
@@ -124,11 +148,12 @@ class ARTTools
         }
     }
 
+/*Récupérer référence de l'article (pour constitution id)*/
     public function affichRefArticle($index) {
         try {
             $bdtools = new BDTools();
              $bdd = $bdtools->connect();
-            $stmt = $bdd->prepare('SELECT refarticle FROM article WHERE pubarticle = "1"');
+            $stmt = $bdd->prepare('SELECT refarticle FROM article');
             $stmt->execute();
             $result = $stmt->fetchAll();
             return $result[$index][0];

@@ -4,6 +4,6 @@
 
     $idusers = $_POST['userselect2'];
     $usertools->resetPass($idusers, 'defautpass');
-    header('Location: ../index.php?EX=administration&switch=1');
+    echo '<script>document.location.replace("http://localhost/Catclinic/index.php?EX=administration&switch=1")</script>';
     exit();
 ?>
