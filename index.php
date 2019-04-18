@@ -18,7 +18,6 @@ switch ($EX)
   case 'administration': administration(); exit;
   case 'modiffiche': modiffiche(); exit;
   case 'ajoutfiche': ajoutfiche(); exit;
-  case 'affichfiche' : affichfiche(); exit;
 }
 
 require('view/layout.view.php');
@@ -132,15 +131,6 @@ function ajoutfiche()
 {
   $vhtml = new VHtml();
   $vhtml->showHtml('html/ajoutfiche.html');
-
-  return;
-
-}
-
-function affichfiche()
-{
-  $vhtml = new VHtml();
-  $vhtml->showHtml('html/contenuart.php');
 
   return;
 

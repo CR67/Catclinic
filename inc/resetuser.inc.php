@@ -1,4 +1,6 @@
 <?php
+//Réinitialisation Mot de passe utilisateur
+
     include ('../view/USERTools.view.php');
     $usertools = new USERTools();
 

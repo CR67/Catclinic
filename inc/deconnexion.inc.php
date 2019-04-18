@@ -3,7 +3,7 @@
     session_start();
     session_unset();
     session_destroy();
-    header('Location: ../index.php');
+    echo '<script>document.location.replace("http://localhost/Catclinic/index.php")</script>';
     exit();
 
 ?>

@@ -1,5 +1,6 @@
-
 <?php
+//Envoi mail demande client
+
 if(isset($_POST['message'])){
 
     $nom = htmlentities($_POST['nom'], ENT_QUOTES);

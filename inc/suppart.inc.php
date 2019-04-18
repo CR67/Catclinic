@@ -1,4 +1,6 @@
 <?php
+//Suppression fiche conseil
+
     include ('../view/ARTTools.view.php');
     $arttools = new ARTTools();
 

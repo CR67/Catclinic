@@ -1,4 +1,6 @@
 <?php
+//Téléchargement d'image
+
 $target_dir = "C:/wamp64/www/Catclinic/images/";
 $images_dir = "images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);

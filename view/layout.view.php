@@ -13,7 +13,6 @@ $vcontent = new $content['class']();
 	<title><?= $content['title'] ?></title>
     <link rel="stylesheet" type="text/css" href="css/foundationorigin.css" />
     <link rel="stylesheet" type="text/css" href="css/editeur.css" />
-    <!--<link rel="stylesheet" type="text/css" href="css/app.css" />-->
 </head>
 
 	<body>
@@ -28,9 +27,7 @@ $vcontent = new $content['class']();
 
 		<script src="js/ajax.js"></script>
         <script src="js/editeur.js"></script>
-        <!--<script src="js/activation.js"></script>-->
         <script src="js/compteur.js"></script>
-		<!--<script src="js/init.js"></script>-->
         <script src="js/jquery.js"></script>
         <script src="js/foundation.js"></script>
         <script>

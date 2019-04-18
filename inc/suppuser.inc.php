@@ -1,4 +1,6 @@
 <?php
+//Suppression utilisateur
+
     include ('../view/USERTools.view.php');
     $usertools = new USERTools();
 

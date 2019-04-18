@@ -12,7 +12,7 @@ function artselect()
         $select = "";
 
         while ($data = $stmt->fetch()) {
-            $select = $select . ("<option value='" . $data['idarticle'] . "'>" . $data['titrearticle'] . "</option>");
+            $select = $select . ("<option value='" . $data['idarticle'] . "'>" . utf8_encode($data['titrearticle']) . "</option>");
         }
 
         return $select;

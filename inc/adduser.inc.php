@@ -1,4 +1,6 @@
 <?php
+//Ajout utilisateur
+
     include ('../view/USERTools.view.php');
     $usertools = new USERTools();
 

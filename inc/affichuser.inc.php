@@ -1,4 +1,6 @@
 <?php
+//Affichage liste utilisateur
+
     include ('./view/BDTools.view.php');
 
     function affichselect()
@@ -12,7 +14,7 @@
             $select = "";
 
             while ($data = $stmt->fetch()) {
-                $select = $select . ("<option value='" . $data['idusers'] . "'>" . $data['login'] . "</option>");
+                $select = $select . ("<option value='" . $data['idusers'] . "'>" . utf8_encode($data['login']) . "</option>");
             }
 
             return $select;

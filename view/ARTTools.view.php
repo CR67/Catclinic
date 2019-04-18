@@ -51,13 +51,14 @@ class ARTTools
     }
 
 /*Modifier le contenu d'un article avec mise à jour de la date*/
-    public function modifArticle($contenu) {
+    public function modifArticle($contenu, $index) {
         try {
+            $idarticle = intval($index);
             $bdtools = new BDTools();
              $bdd = $bdtools->connect();
             $date = date("Y-m-d H:i:s");
-            $stmt = $bdd->prepare('UPDATE article SET contenuarticle = :contenuarticle, datearticle = :datearticle');
-            if($stmt->execute(array('contenuarticle' => $contenu, 'datearticle' => $date))) {
+            $stmt = $bdd->prepare('UPDATE article SET contenuarticle = :contenuarticle, datearticle = :datearticle WHERE idarticle = :idarticle');
+            if($stmt->execute(array('contenuarticle' => $contenu, 'datearticle' => $date, 'idarticle' => $idarticle))) {
                 $result = '<script>alert("Modification effectuée.")</script>';
                 echo $result;
             }else{

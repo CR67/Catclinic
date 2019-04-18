@@ -3,6 +3,7 @@
     $usertools = new USERTools();
 
     if(empty($_POST['identifiant']) || empty($_POST['motdepasse'])) {
+        echo '<script>alert("Champs vides !")</script>';
         header('Location: ../index.php?EX=administration&switch=false');
         exit();
     }else{
